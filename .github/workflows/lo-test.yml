@@ -6,7 +6,7 @@ on:
     inputs:
       device:
         description: 'select device to build'
-        default: 'r2s'
+        default: 'r4s'
         required: false
       branch:
         description: 'seleclt openwrt branch'
@@ -214,7 +214,6 @@ jobs:
 
   generate_slim_firmware:
     needs: build_packages
-    if: always()
     name: Generate ${{ github.event.client_payload.device || github.event.inputs.device }} slim firmware
     runs-on: ubuntu-latest
     env:
